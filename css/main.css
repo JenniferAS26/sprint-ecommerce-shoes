@@ -4,6 +4,59 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: "Kumbh Sans", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #B3B8BE;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  padding: 20px;
+  border-bottom: 1px solid #B3B8BE;
+}
+header .navbar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .navbar-header .options-list, header .navbar-header .actios-list {
+  width: 550px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header .navbar-header .options-list .logo, header .navbar-header .actios-list .logo {
+  margin-right: 40px;
+}
+header .navbar-header .options-list .logo a, header .navbar-header .actios-list .logo a {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #000000;
+  letter-spacing: 1px;
+}
+header .navbar-header .options-list li, header .navbar-header .actios-list li {
+  font-size: 1.6rem;
+}
+header .navbar-header .actios-list {
+  width: 150px;
+}
+header .navbar-header .actios-list .avatar {
+  width: 35px;
+  height: 35px;
+}
+header .navbar-header .actios-list .avatar img {
+  width: 100%;
 }/*# sourceMappingURL=main.css.map */
