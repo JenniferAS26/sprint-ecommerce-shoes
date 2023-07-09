@@ -23,10 +23,13 @@ Sprint final Modulo de Fundamentos
     7. Después esto ya tendremos listo para usar nuestro preprocesador SASS
 
 
-    ### Tareas
+### Tareas
 
-    Santiago Manu Carrusel
+Santiago Manu Carrusel
 
-    kelly Shopping cart
+kelly Shopping cart
 
-    Jennifer Vista Mobile
+Jennifer Vista Mobile
+
+## Se creo una rama develop para enviar todos los datos a ésta
+
