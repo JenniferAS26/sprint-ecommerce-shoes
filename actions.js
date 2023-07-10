@@ -1,5 +1,5 @@
 // Open/Close Menu
-const toggleMenu = () => (document.body.classList.toggle("open"));
+const toggleMenu = () => (document.body.classList.toggle("open")); // add a new class
 
 // Cart counter
 let spanCount = document.querySelector('.quantity-product');
