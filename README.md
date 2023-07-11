@@ -21,3 +21,12 @@ Sprint final Modulo de Fundamentos
         ```
         #### nota: las flechas son solo para ilustrar
     7. Después esto ya tendremos listo para usar nuestro preprocesador SASS
+
+
+    ### Tareas
+
+    Santiago Manu Carrusel
+
+    kelly Shopping cart
+
+    Jennifer Vista Mobile
