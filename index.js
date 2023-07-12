@@ -1,3 +1,30 @@
+// JSON server Fake API
+const api = 'http://localhost:3000'
+
+const getAllProducts = async () => {
+  const response = await fetch(`${api}/products`);
+  const data = await response.json();
+  const apiTest = document.querySelector('.api-test');
+  console.log(data);
+  apiTest.insertAdjacentHTML(
+    'beforeend',
+    `<h1>${data[0].name}</h1>
+    <img src="${data[0].thumbnails[1]}" />
+    `
+  );
+  return data;
+}
+
+const getProductById = async (id) => {
+  const response = await fetch(`${api}/products/${id}`);
+  const data = await response.json();
+  console.log(data.thumbnails[0]);
+  return data.thumbnails[0];
+}
+
+getAllProducts();
+// getProductById(1);
+
 // Open/Close Navbar Modal
 const burgerMenu = document.querySelector('.header__menu');
 const modalNavbar = document.querySelector('.modal-navbar__background');
