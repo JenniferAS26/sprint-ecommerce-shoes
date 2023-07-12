@@ -86,7 +86,9 @@ const modalGallery = document.querySelector('.modal-gallery__background');
 const closeModalGalleryButton = document.querySelector('.modal-gallery__close');
 
 imageContainer.addEventListener('click', () => {
-  modalGallery.style.display = 'grid';
+  if (window.innerWidth >= 1115) {
+    modalGallery.style.display = 'grid';
+  }
 });
 
 closeModalGalleryButton.addEventListener('click', () => {
