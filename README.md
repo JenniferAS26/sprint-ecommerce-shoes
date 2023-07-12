@@ -29,7 +29,9 @@ Santiago Manu Carrusel
 
 kelly Shopping cart
 
-Jennifer Vista Mobile
+Jennifer Vista Mobile -- done
 
 ## Se creo una rama develop para enviar todos los datos a ésta
+
+
 

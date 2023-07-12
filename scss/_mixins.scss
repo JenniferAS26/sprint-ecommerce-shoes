@@ -1,0 +1,29 @@
+@use 'variables' as v;
+
+@mixin backgroundModal {
+  background-color: v.$black-modal;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin buttonStyle {
+  cursor: pointer;
+  width: 100%;
+  height: 54px;
+  border: none;
+  border-radius: 8px;
+  background-color: v.$primary-color;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: v.$extrabold-weight;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  &:hover {
+    opacity: 0.5;
+  }
+}
