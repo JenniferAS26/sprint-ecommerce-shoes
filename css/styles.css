@@ -208,43 +208,44 @@
   }
 }
 
-.product-details {
+.api-test-container {
+  width: 450px;
   padding: 24px;
 }
-.product-details__company {
+.api-test-container__company {
   text-transform: uppercase;
   color: #FF7D1A;
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 1.2px;
 }
-.product-details__title {
+.api-test-container__title {
   margin: 15px 0;
   font-size: 2.8rem;
   font-weight: 700;
   line-height: 1;
 }
-.product-details__description {
+.api-test-container__description {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.5;
   color: #68707d;
   margin-bottom: 25px;
 }
-.product-details__prices {
+.api-test-container__prices {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
 }
-.product-details__current {
+.api-test-container__current {
   font-size: 2.6rem;
   font-weight: 700;
   display: flex;
   align-items: center;
   gap: 18px;
 }
-.product-details__discount {
+.api-test-container__discount {
   background-color: #ffede0;
   padding: 0.4rem 1.1rem;
   font-size: 1.5rem;
@@ -252,14 +253,14 @@
   color: #FF7D1A;
   border-radius: 5px;
 }
-.product-details__last {
+.api-test-container__last {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 1.6px;
   color: #b6bcc8;
   text-decoration: line-through;
 }
-.product-details__button {
+.api-test-container__button {
   cursor: pointer;
   width: 100%;
   height: 54px;
@@ -275,32 +276,32 @@
   gap: 15px;
   margin-top: 20px;
 }
-.product-details__button:hover {
+.api-test-container__button:hover {
   opacity: 0.5;
 }
 @media (min-width: 1115px) {
-  .product-details {
+  .api-test-container {
     width: 450px;
     padding-top: 60px;
   }
-  .product-details__title {
+  .api-test-container__title {
     font-size: 3.8rem;
     margin-bottom: 48px;
   }
-  .product-details__description {
+  .api-test-container__description {
     font-size: 2.1rem;
     margin-bottom: 37px;
   }
-  .product-details__prices {
+  .api-test-container__prices {
     flex-direction: column;
     align-items: flex-start;
   }
-  .product-details__product-quantity {
+  .api-test-container__product-quantity {
     display: flex;
     align-items: center;
     gap: 32px;
   }
-  .product-details__button {
+  .api-test-container__button {
     margin-top: 0;
   }
 }
