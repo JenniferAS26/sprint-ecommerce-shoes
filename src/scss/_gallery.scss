@@ -37,7 +37,8 @@
     }
   }
   &__thumbnail {
-    width: 90px;
+    width: 100%;
+    object-fit: contain;
     border-radius: 16px;
     &:hover {
       opacity: 0.5;

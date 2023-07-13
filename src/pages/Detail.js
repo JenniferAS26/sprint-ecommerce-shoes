@@ -15,10 +15,10 @@ const Detail = async () => {
         </button>
       </div>
       <div class="gallery__thumbnails">
-        <img id="thumbnail-1" class="gallery__thumbnail" src="${product.thumbnails[0]}" alt="thumbnail">
-        <img id="thumbnail-2" class="gallery__thumbnail" src="${product.thumbnails[1]}" alt="thumbnail">
-        <img id="thumbnail-3" class="gallery__thumbnail" src="${product.thumbnails[2]}" alt="thumbnail">
-        <img id="thumbnail-4" class="gallery__thumbnail" src="${product.thumbnails[3]}" alt="thumbnail">
+        <img id="thumbnail-1" class="gallery__thumbnail" src="${product.thumbnails[0]}" alt="thumbnail" style="width: 75px; height: 75px">
+        <img id="thumbnail-2" class="gallery__thumbnail" src="${product.thumbnails[1]}" alt="thumbnail" style="width: 75px; height: 75px">
+        <img id="thumbnail-3" class="gallery__thumbnail" src="${product.thumbnails[2]}" alt="thumbnail" style="width: 75px; height: 75px">
+        <img id="thumbnail-4" class="gallery__thumbnail" src="${product.thumbnails[3]}" alt="thumbnail" style="width: 75px; height: 75px">
       </div>
     </section>
     <section class="product-details">

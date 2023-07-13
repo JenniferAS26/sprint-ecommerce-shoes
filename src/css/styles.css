@@ -181,7 +181,9 @@
   }
 }
 .gallery__thumbnail {
-  width: 90px;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
   border-radius: 16px;
 }
 .gallery__thumbnail:hover {
