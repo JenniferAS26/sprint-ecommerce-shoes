@@ -148,9 +148,16 @@
 .gallery__image-container {
   width: 100%;
   height: 300px;
-  background-image: url("../assets/images/image-product-1.jpg");
-  background-size: cover;
-  position: relative;
+}
+.gallery__image {
+  width: 100%;
+  height: 300px;
+}
+.gallery__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .gallery__previuos, .gallery__next {
   cursor: pointer;
@@ -161,7 +168,7 @@
   border: none;
   border-radius: 50%;
   position: absolute;
-  top: calc(50% - 20px);
+  top: calc(25% - 20px);
   right: 325px;
   z-index: 1;
 }
@@ -181,9 +188,7 @@
   }
 }
 .gallery__thumbnail {
-  width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  width: 90px;
   border-radius: 16px;
 }
 .gallery__thumbnail:hover {
@@ -196,7 +201,6 @@
     width: 450px;
   }
   .gallery__image-container {
-    border-radius: 16px;
     height: 450px;
     -o-object-fit: cover;
        object-fit: cover;
@@ -207,6 +211,17 @@
   }
   .gallery__image-container button {
     display: none;
+  }
+  .gallery__image {
+    width: 100%;
+    height: 450px;
+  }
+  .gallery__image img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 16px;
   }
 }
 
@@ -427,12 +442,21 @@
   content: url("../assets/images/icon-close-orange.svg");
 }
 .modal-gallery__image-container {
-  background-image: url("../assets/images/image-product-1.jpg");
   height: 550px;
   background-size: cover;
-  border-radius: 26px;
   margin-bottom: 32px;
   position: relative;
+}
+.modal-gallery__image {
+  width: 100%;
+  height: 100%;
+}
+.modal-gallery__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 26px;
 }
 .modal-gallery__previuos, .modal-gallery__next {
   width: 50px;

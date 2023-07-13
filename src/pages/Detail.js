@@ -7,6 +7,9 @@ const Detail = async () => {
   const view = `
     <section class="gallery">
       <div class="gallery__image-container">
+        <div class="gallery__image">
+						<img src="${product.images[0]}" alt="product">
+        </div>
         <button class="gallery__previuos">
           <img src="../assets/images/icon-previous.svg" alt="previus icon">
         </button>	
