@@ -1,0 +1,424 @@
+/*=============== VARIABLES CSS ===============*/
+:root {
+
+    /*========== Colors ==========*/
+    --first-color: #FF7D1A;
+    --secondary-color: 	#ffede0;
+    --primary-text-color: #68707d;
+    --black-modal: hsl(0, 0%, 0%, 0.5);
+    --font-stack: 'Kumbh Sans', sans-serif;
+    --title-color: hsl(250, 8%, 15%);
+    --text-color: hsl(250, 8%, 35%);
+    --body-color: hsl(250, 60%, 96%);
+    --container-color: #fff;
+    --shadow: hsla(0, 0%, 15%, .1);
+    --scroll-bar-color: hsl(250, 12%, 86%);
+    --scroll-thumb-color: hsl(250, 12%, 80%);
+    /*========== Font and typography ==========*/
+    --biggest-font-size: 6.4rem;
+    --h1-font-size: 4.6rem;
+    --h2-font-size: 2.4rem;
+    --h3-font-size: 2rem;
+    --normal-font-size: 2rem;
+    --small-font-size: 1.8rem;
+    --smaller-font-size: 1.4rem;
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-bold: 600;
+
+    /*========== Margenes Bottom ==========*/
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 4.8rem;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+
+
+/*=============== BASE ===============*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    font-family: "Kumbh Sans", sans-serif;
+    width: 100%;
+    height: 100%;
+  }
+  body .wrapper {
+    width: 375px;
+    margin: auto;
+    position: relative;
+  }
+  @media (min-width: 1115px) {
+    body .wrapper {
+      width: 1115px;
+    }
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  @media (min-width: 1115px) {
+    .main-content {
+      display: flex;
+      gap: 124px;
+      padding: 90px 50px;
+    }
+  }
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.section {
+    padding: 7rem 0 2rem;
+}
+
+.section__title,
+.breadcrumb__title {
+    font-size: var(--h1-font-size);
+    margin-bottom: var(--mb-3);
+}
+
+.breadcrumb__subtitle {
+    font-size: var(--h2-font-size);
+}
+
+.section__title,
+.breadcrumb__subtitle {
+    margin-bottom: var(--mb-3);
+}
+
+.section__title,
+.breadcrumb__title,
+.breadcrumb__subtitle {
+    text-align: center;
+}
+
+.breadcrumb__subtitle span {
+    color: var(--first-color);
+}
+/*=============== LAYOUT ===============*/
+.container {
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid {
+    display: grid;
+}
+
+/*=============== BUTTONS ===============*/
+.button {
+    display: inline-block;
+    background: var(--first-color);
+    color: #fff;
+    padding: 1rem 1.75rem;
+    border-radius: .5rem;
+    font-weight: var(--font-medium);
+    transition: all .3s ease;
+}
+
+.button:hover {
+    background-color: var(--first-color);
+}
+
+.button__icon {
+    font-size: 1.25rem;
+}
+
+.button--link {
+    color: var(--title-color);
+    transition: .3s;
+}
+
+.button--link:hover{
+    color: var(--first-color);
+}
+
+.button--flex {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+}
+
+/*=============== SHOP CONTAINER PROYECTO ===============*/
+
+.shop__container {
+    grid-template-columns: 3.3fr;
+    column-gap: 1.8rem;
+    
+}
+
+.shop__items {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1.6rem;
+}
+
+.shop__content {
+    position: relative;
+    background-color: var(--container-color);
+    padding: 2rem 0;
+    border-radius: 1rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.shop__img{
+    width: 180px;
+    margin-bottom: var(--mb-1);
+}
+
+.shop__tag {
+    position: absolute;
+    top: 8%;
+    left: 8%;
+    background-color: var(--first-color);
+    color: #fff;
+    font-size: var(--small-font-size);
+    padding: .25rem .5rem;
+    border-radius: .25rem;
+}
+
+.shop__title {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+}
+
+.shop__subtitle {
+    display: block;
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-1);
+}
+
+.shop__prices {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+}
+
+.shop__price {
+  font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    color: var(--title-color);
+}
+
+.shop__discounts {
+    color: var(--first-color);
+    font-size: var(--small-font-size);
+    text-decoration: line-through;
+    font-weight: var(--font-medium);
+}
+
+.shop__button {
+    display: inline-flex;
+    padding: .8rem;
+    border-radius: .4rem .4rem 1.2rem .4rem;
+    position: absolute;
+    bottom: 0;
+    right: -4.8rem;
+}
+
+.shop__icon {
+    color: #fff;
+    font-size: 4.25rem;
+}
+
+.shop__content:hover .shop__img {
+    transition: all .3s ease;
+    transform: translateY(-.8rem);
+}
+
+.shop__content:hover .shop__button {
+    right: 0;
+}
+
+.shop__form {
+    row-gap: 1.5rem;
+}
+
+.shop_form-content {
+    display: flex;
+    column-gap: .5rem;
+    background: var(--container-color);
+    border-radius: .5rem;
+    padding: .25rem;
+}
+
+.shop__form-input {
+    width: 100%;
+    border: 1px solid var(--title-color);
+    border-radius: .5rem;
+    background: var(--container-color);
+    color: var(--text-color);
+    font-size: var(--normal-font-size);
+    padding: .25rem .5rem .5rem .5rem;
+}
+
+.shop__form-input:focus {
+    border: 1px solid var(--first-color)
+}
+
+/*=============== HEADER PROYECTO ===============*/
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 24px;
+  }
+  @media (min-width: 1115px) {
+    .header {
+      height: 110px;
+      border-bottom: 1px solid rgba(211, 211, 211, 0.682);
+    }
+  }
+  .header__nav {
+    width: 175px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @media (min-width: 1115px) {
+    .header__nav {
+      width: 600px;
+    }
+  }
+  .header__menu:hover {
+    cursor: pointer;
+  }
+  @media (min-width: 1115px) {
+    .header__menu {
+      display: none;
+    }
+  }
+  .header__cart-avatar {
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  @media (min-width: 1115px) {
+    .header__cart-avatar {
+      width: 130px;
+    }
+  }
+  .header__cart {
+    position: relative;
+  }
+  .header__cart--counter {
+    display: none;
+    background-color: #FF7D1A;
+    color: #ffffff;
+    font-size: 10px;
+    text-align: center;
+    width: 15px;
+    height: 12px;
+    border-radius: 16px;
+    position: absolute;
+    top: -2px;
+    right: -5px;
+  }
+  .header__cart:hover {
+    cursor: pointer;
+  }
+  .header__avatar {
+    width: 24px;
+    object-fit: cover;
+  }
+  @media (min-width: 1115px) {
+    .header__avatar {
+      width: 50px;
+    }
+  }
+  .header__avatar:hover {
+    cursor: pointer;
+    border: 2px solid #FF7D1A;
+    border-radius: 50%;
+  }
+  
+  .navbar {
+    display: none;
+    width: 400px;
+    width: 100%;
+    height: 100%;
+    margin-left: 20px;
+  }
+  .navbar__items {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  .navbar__link {
+    text-decoration: none;
+    color: #68707d;
+    font-size: 1.8rem;
+    display: block;
+    height: 65px;
+    margin: 45px 0 60px 0;
+  }
+  .navbar__link:hover {
+    border-bottom: 4px solid #FF7D1A;
+  }
+  @media (min-width: 1115px) {
+    .navbar {
+      display: block;
+    }
+  }
+  
+  .modal-navbar {
+    background-color: #ffffff;
+    width: 200px;
+    height: 100%;
+    padding: 28px 24px;
+  }
+  .modal-navbar__background {
+    background-color: hsla(0, 0%, 0%, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 4;
+  }
+  .modal-navbar__close-icon:hover {
+    cursor: pointer;
+  }
+  .modal-navbar__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px;
+    list-style: none;
+    margin-top: 30px;
+  }
+  .modal-navbar__link {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
