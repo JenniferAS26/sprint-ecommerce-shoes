@@ -5,9 +5,18 @@
   &__image-container {
     width: 100%;
     height: 300px;
-    background-image: url('../assets/images/image-product-1.jpg');
-    background-size: cover;
-    position: relative;
+    // background-image: url('../assets/images/image-product-1.jpg');
+    // background-size: cover;
+    // position: relative;
+  }
+  &__image {
+    width: 100%;
+    height: 300px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
   &__previuos {
     cursor: pointer;
@@ -18,7 +27,7 @@
     border: none;
     border-radius: 50%;
     position: absolute;
-    top: calc(50% - 20px);
+    top: calc(25% - 20px);
     right: 325px;
     z-index: 1;
     &:hover {
@@ -48,7 +57,6 @@
   @media (min-width: 1115px) {
     width: 450px;
     &__image-container {
-      border-radius: 16px;
       height: 450px;
       object-fit: cover;
       margin-bottom: 32px;
@@ -57,6 +65,16 @@
       }
       button {
         display: none;
+      }
+    }
+    &__image {
+      width: 100%;
+      height: 450px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 16px;
       }
     }
   }

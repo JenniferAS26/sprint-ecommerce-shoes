@@ -68,7 +68,7 @@ const deleteProduct = () => {
 }
 
 // Change images with previous and next buttons
-const imageContainer = document.querySelector('.gallery__image-container');
+const imageContainer = document.querySelector('.gallery__image');
 const previousGalleryButton = document.querySelector('.gallery__previuos');
 const nextGalleryButton = document.querySelector('.gallery__next');
 let imgIndicator = 1;
@@ -101,18 +101,24 @@ thumbnails = [...thumbnails] // transform from nodeList to array
 thumbnails.forEach(thumbnail => {
   thumbnail.addEventListener('click', e => {
     const stringId = e.target.id;
-    imageContainer.style.backgroundImage = `url('../assets/images/image-product-${stringId.slice(-1)}.jpg')`;
-  });
+    // imageContainer.style.backgroundImage = `url('../assets/images/image-product-${stringId.slice(-1)}.jpg')`;
+    // imageContainer.insertAdjacentHTML(
+    //   'beforeend',
+    //   `<img src="./assets/images/image-product-${stringId.slice(-1)}.jpg" alt="product">`);
+    // });
+    imageContainer.innerHTML = `<img src="./assets/images/image-product-${stringId.slice(-1)}.jpg" alt="product">`;
+  })
 });
 
 // Change images in Modal with thumbnails 
-const imageModalContainer = document.querySelector('.modal-gallery__image-container');
+const imageModalContainer = document.querySelector('.modal-gallery__image');
 let modalThumbnails = document.querySelectorAll('.modal-gallery__thumbnail');
 modalThumbnails = [...modalThumbnails];
 modalThumbnails.forEach(modalThumbnail => {
   modalThumbnail.addEventListener('click', e => {
     const stringId = e.target.id;
-    imageModalContainer.style.backgroundImage = `url('../assets/images/image-product-${stringId.slice(-1)}.jpg')`;
+    imageModalContainer.innerHTML = `<img src="./assets/images/image-product-${stringId.slice(-1)}.jpg" alt="product">`;
+
   });
 });
 
@@ -150,7 +156,9 @@ const changeNextImage = (imgContainer) => {
   } else {
     imgIndicator++;
   }
-  imgContainer.style.backgroundImage = `url('../assets/images/image-product-${imgIndicator}.jpg')`;
+  // imgContainer.style.backgroundImage = `url('../assets/images/image-product-${imgIndicator}.jpg')`;
+  imgContainer.innerHTML = `<img src="./assets/images/image-product-${imgIndicator}.jpg" alt="product">`;
+
 }
 
 const changePreviousImage = (imgContainer) => {
@@ -159,5 +167,5 @@ const changePreviousImage = (imgContainer) => {
   } else {
     imgIndicator--;
   }
-  imgContainer.style.backgroundImage = `url('../assets/images/image-product-${imgIndicator}.jpg')`;
+  imgContainer.innerHTML = `<img src="./assets/images/image-product-${imgIndicator}.jpg" alt="product">`;
 }
