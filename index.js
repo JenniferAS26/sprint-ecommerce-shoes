@@ -8,17 +8,16 @@ const getData = async (id) => {
 }
 
 const homeSection = async () => {
-  const data = await getData();
-  console.log(data);
+  const products = await getData();
   let homeContainer = document.querySelector('.home-container');
   homeContainer.insertAdjacentHTML(
     'beforeend',
     `
       <section class="shop section container">
         <div class="shop__container grid">
-          ${data.map(product => `
+          ${products.map(product => `
             <div class="shop__items grid">
-              <a href="/" class="shop__link">
+              <a href="#/${product.id}" class="shop__link">
                 <div class="shop__content">
                     <img src=${product.images[0]} alt="${product.name}" class="shop__img">
                     <div class="shop__prices">
@@ -34,11 +33,12 @@ const homeSection = async () => {
   `
   );
 }
+const getHash = () => location.hash.slice(1).split("/")[1] || '/';
 
 const detailSection = async () => {
-  const data = await getData(2);
-  console.log(data);
-
+  const id = Number.parseInt(getHash(), 10);
+  console.log(id);
+  const data = await getData(id);
   // Content from api
   const company = document.querySelector('.product-details__company');
   const title = document.querySelector('.product-details__title');
@@ -260,6 +260,7 @@ minusCounterBtn.addEventListener('click', () => {
 
 
 }
+
 
 // Change images with previous and next buttons
 const imageContainer = document.querySelector('.gallery__image');

@@ -44,7 +44,9 @@ a {
 
 
 .main-content {
+  position: relative;
   @media (min-width: 1115px) {
+    // display: none;
     display: flex;
     gap: 124px;
     padding: 90px 50px;
