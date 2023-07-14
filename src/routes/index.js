@@ -4,10 +4,11 @@ import Detail from "../pages/Detail";
 import Error404 from "../pages/Error404";
 import getHash from "../utils/getHash";
 import resolveRoutes from "../utils/resolveRoutes";
+import ModalNavbar from "../components/ModalNavbar";
 
 const routes = {
   '/': Home,
-  '/:id': Detail,
+  '/:id': Detail
 }
 
 const router = async () => {
