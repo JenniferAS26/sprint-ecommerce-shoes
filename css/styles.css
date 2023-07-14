@@ -505,7 +505,7 @@
   justify-self: center;
 }
 .home-container .shop__link {
-  color: hsla(0, 0%, 0%, 0.5);
+  color: #D3D3D3;
 }
 .home-container .shop__container {
   display: flex;
