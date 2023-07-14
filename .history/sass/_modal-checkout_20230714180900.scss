@@ -1,0 +1,23 @@
+@use 'variables';
+@use 'mixins';
+
+.modal-checkout{
+    width: 350px;
+    height: 550px;
+    padding: 20px;
+    background-color: variables.$White;
+    border-radius: 25px;
+    &__background{
+        @include mixins.backgroundModal;
+        z-index: 2;
+        display: grid;
+        place-content: center;
+    }
+    &__form{
+        padding: 10px;
+        display: grid;
+      
+        width: 100%;
+        height: 100%;
+    }
+}

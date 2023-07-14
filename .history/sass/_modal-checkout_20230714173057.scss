@@ -1,0 +1,15 @@
+@use 'variables' as v;
+@use 'mixins';
+
+.modal-checkout{
+    width: 350px;
+    heigth: 550px;
+    padding: 20px;
+    &__brackground{
+        @include mixins.backgroundModal;
+        z-index: 2;
+        display: none;
+        place-content: center;
+        
+    }
+}
