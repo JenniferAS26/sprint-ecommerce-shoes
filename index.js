@@ -17,7 +17,7 @@ const homeSection = async () => {
         <div class="shop__container grid">
           ${products.map(product => `
             <div class="shop__items grid">
-              <a href="#/${product.id}" class="shop__link">
+              <a href="#main-content/${product.id}" class="shop__link">
                 <div class="shop__content">
                     <img src=${product.images[0]} alt="${product.name}" class="shop__img">
                     <div class="shop__prices">
@@ -34,7 +34,6 @@ const homeSection = async () => {
   );
 }
 const getHash = () => location.hash.slice(1).split("/")[1] || '/';
-
 const detailSection = async () => {
   const id = Number.parseInt(getHash(), 10);
   console.log(id);
