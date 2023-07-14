@@ -54,16 +54,15 @@ const displayProducts = (filteredProducts) => {
         `
         <div class="shop__content">
             <div class="shop__tag">New</div>
-            <img src=${product.img} alt="" class="shop__img">
+            <img src=${product.images[0]} alt="" class="shop__img">
             <h3 class="shop__title">${product.name}</h3>
             <span class="shop__subtitle">Accessory</span>
 
             <div class="shop__prices">
                 <span class="shop__price">$${product.price}</span>
-                <span class="shop__discounts">$29.99</span>
             </div>
 
-            <a href="index.html" class="button shop__button">
+            <a href="#/${product.id}" class="button shop__button">
                 <i class="bx bx-cart-alt shop__icon"></i>
             </a>
 

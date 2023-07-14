@@ -7,6 +7,7 @@
 @use 'quantity';
 @use 'modalCart';
 @use 'modalGallery';
+@use 'home';
 
 * {
   margin: 0;
@@ -59,4 +60,14 @@ a {
   font-size: 1.8rem;
   color: v.$primary-text-color;
   margin-top: 25px;
+}
+
+.section {
+  padding: 7rem 0 2rem;
+}
+
+.container {
+  max-width: 968px;
+  margin-left: auto;
+  margin-right: auto;
 }
