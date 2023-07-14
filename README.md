@@ -1,32 +1,41 @@
-# sprint-ecommerce-shoes
-Sprint final Modulo de Fundamentos
+# Frontend Mentor - E-commerce product page
 
-## Configuraciones iniciales
-### Preprocesador SASS
-- Añadir la extensión en Visual Studio Live Sass Compiler
-- Verificar en los Settings de visual estudio de la siguiente manera
-    1. Ubicar los settings en la parte inferior izquierda (es una tuerca)
-    2. Se abre un menú desplegable y ahí verificar la opción settings o configuración
-    3. En el buscador escribir "sass format", dar clic en la opción Lice Sass Compiler
-    4. Se encontrará la opción Live Sass Compiler > Settings: Format
-    5. Dar clic el enlace "Edit in settings.json"
-    6. Una vez dentro del archivo verficar que las siguientes opciones "extensionName" y "savePath" se encuentren de la siguiente manera sino modificarlo para que quede de esa manera
-        ```
-            {
-                "format": "expanded",
-                "extensionName": ".css",   <----
-                "savePath": "/css",        <----
-                "savePathReplacementPairs": null
-            }
-        ```
-        #### nota: las flechas son solo para ilustrar
-    7. Después esto ya tendremos listo para usar nuestro preprocesador SASS
+![Design preview for the E-commerce product page coding challenge](./design/desktop-preview.jpg)
 
+## Welcome! 👋
 
-    ### Tareas
+👋 Bienvenidos a CodingTube, un canal dedicado a los apasionados por el código. Si te gusta programar y quieres aprender más acerca de este fascinante mundo, estás en el lugar indicado.
 
-    Santiago Manu Carrusel
+►SíGUEME AQUí:
 
-    kelly Shopping cart
+✅YouTube: https://www.youtube.com/CodingTube
 
-    Jennifer Vista Mobile
+✅TikTok: https://www.tiktok.com/@codingtube
+
+✅WEB: https://coding-tube.com/
+
+✅Twitter: https://twitter.com/CodingTube
+
+✅Discord: https://discord.gg/tasEBrh8Zw
+
+✅Twitch: https://www.twitch.tv/codingtube
+
+✅Facebook: https://www.facebook.com/groups/codingtubers
+
+►CURSOS:
+
+📕HTML5: https://bit.ly/CodingHTML01
+
+📘CSS3: https://bit.ly/CodingCSS01
+
+📙Javascript: http://bit.ly/CodingJS01
+
+►LISTAS DE REPRODUCCIÓN RECOMENDADAS:
+
+📒Etiquetas HTML: https://bit.ly/HTMLShorts
+
+📗Todos los retos frontend: https://bit.ly/CodingRetos
+
+►CLASES PARTICULARES:
+
+👨‍🏫Reserva una clase gratuita de 20 minutos aquí: https://www.classgap.com/me/david-577169

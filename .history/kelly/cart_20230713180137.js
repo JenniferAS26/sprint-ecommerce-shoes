@@ -1,0 +1,1 @@
+const miodalContainer = document.getElementById('modal');
