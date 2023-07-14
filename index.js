@@ -186,6 +186,13 @@ const detailSection = async () => {
       cartNotification.textContent = lastValue;
     });
   
+    const modalCheckoutButton = document.querySelector('.cart-modal__checkout');
+    const modalCheckout = document.querySelector('.modal-checkout__background');
+    modalCheckoutButton.addEventListener('click', () => {
+      console.log('click checkout');
+      modalCheckout.style.display = 'grid';
+    });
+    
 
 }
 
@@ -259,6 +266,7 @@ minusCounterBtn.addEventListener('click', () => {
 
 
 }
+
 
 
 // Change images with previous and next buttons
@@ -339,6 +347,7 @@ const drawProductModal = () => {
       let priceModal = document.querySelector('.cart-modal__price');
       priceModal.innerHTML = `$125.00 x${lastValue} <span>$${lastValue * 125}.00</span>`;
 };
+
 
 // const changeNextImage = (imgContainer) => {
 //   if (imgIndicator === 4) {
