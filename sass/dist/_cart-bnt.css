@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+.cart-button {
+  right: 40px;
+  background-color: orange;
+  padding: 10px;
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  transition: transform 0.2s ease-in-out;
+}
