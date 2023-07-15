@@ -188,14 +188,12 @@ const detailSection = async () => {
   
     const modalCheckoutButton = document.querySelector('.cart-modal__checkout');
     const modalCheckout = document.querySelector('.modal-checkout__background');
-    const closeNavbar = document.querySelector('.modal-checkout__close-icon');
     modalCheckoutButton.addEventListener('click', () => {
       console.log('click checkout');
       modalCheckout.style.display = 'grid';
     });
-    closeNavbar.addEventListener('click', () => {
-      modalNavbar.classList.remove('show');
-    });
+    
+
 }
 
 // Open/Close Navbar Modal
