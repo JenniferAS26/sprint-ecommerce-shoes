@@ -171,7 +171,8 @@ const detailSection = async () => {
       modalCheckout.style.display = 'grid';
     });
     closeModal.addEventListener('click', () => {
-      modalNavbar.classList.remove('show');
+      console.log('click en cerrar');
+      modalCheckout.style.display = 'none';
     });
   }
 
