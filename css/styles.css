@@ -356,8 +356,8 @@
   border-radius: 8px;
   box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.3);
   position: absolute;
-  top: 75px;
-  right: 8px;
+  top: -25px;
+  right: 10px;
   background-color: #ffffff;
   z-index: 3;
 }
@@ -590,6 +590,11 @@
   z-index: 3;
   display: none;
   place-content: center;
+}
+.modal-checkout__close-icon:hover {
+  cursor: pointer;
+  content: url("../assets/images/icon-close-orange.svg");
+  transform: scale(1.5);
 }
 .modal-checkout__form {
   width: 100%;
