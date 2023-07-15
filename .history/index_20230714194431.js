@@ -193,7 +193,7 @@ const detailSection = async () => {
       console.log('click checkout');
       modalCheckout.style.display = 'grid';
     });
-    closeModal.addEventListener('click', () => {
+    close.addEventListener('click', () => {
       modalNavbar.classList.remove('show');
     });
 }
