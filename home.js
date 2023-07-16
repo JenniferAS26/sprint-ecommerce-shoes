@@ -98,4 +98,6 @@ cartIcon.addEventListener('click', () => {
 });
 
 
+
+
 homeSection();

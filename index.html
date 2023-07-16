@@ -79,6 +79,7 @@
 					</button>
 				</div>
 			</section>
+
 			<!-- modal shopping cart start -->
 			<div class="cart-modal">
 				<p class="cart-modal__title">Cart</p>
@@ -95,7 +96,6 @@
 				</div>
 			</div>
 			<!-- modal shopping cart end -->	
-			
 
 		</main>
 	</div>
@@ -114,19 +114,21 @@
 	</div>
 	<!-- navbar modal end -->
 
+
 	<!-- modal checkout start -->
 	<div class="modal-checkout__background">
 		<div class="modal-checkout">
 		<img class="modal-checkout__close-icon" src="../assets/images/icon-close.svg" alt="close">
 		<form class="modal-checkout__form">
-			<input class="modal-checkout__input" type="text" placeholder="Nombre"/>
-			<input class="modal-checkout__input" type="text" placeholder="Cedula"/>
-			<input class="modal-checkout__input" type="text" placeholder="Tarjeta de credito"/>
+			<input class="modal-checkout__input" name="name" id="input-name" type="text" placeholder="Nombre"/>
+			<input class="modal-checkout__input" name="identification" id="input-id" type="text" placeholder="Cedula"/>
+			<input class="modal-checkout__input" name="creditcard" id="input-creditcard" type="text" placeholder="Tarjeta de credito"/>
 			<button class="modal-checkout__button" type="submit">Enviar datos</button>
 		</form>
 		</div>
 	</div>
 	<!-- modal checkout start -->
+	
 
 	<!-- gallery modal start -->
 	<div class="modal-gallery__background">
@@ -155,7 +157,7 @@
 	</div>
 	<!-- gallery modal end -->
 	<script src="index.js"></script>
-
+	<script src="./checkoutForm.js"></script>
 	<!-- <script src="./main.js"></script> -->
 </body>
 </html>
