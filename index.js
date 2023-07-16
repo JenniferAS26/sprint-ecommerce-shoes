@@ -11,9 +11,9 @@ const getHash = () => {
   const params = new URLSearchParams(location.search);
   return params.get('id') || '/';
 };
+
 const detailSection = async () => {
   const id = Number.parseInt(getHash(), 10);
-  console.log(id);
   const data = await getData(id);
   // Content from api
   const company = document.querySelector('.product-details__company');
@@ -27,11 +27,22 @@ const detailSection = async () => {
   title.textContent = data.name;
   description.textContent = data.description;
 
-  // Buttons Functionality
+  // Gallery functionality
   const galleryImage = document.querySelector('.image');
   const previousGalleryButton = document.querySelector('.gallery__previuos');
   const nextGalleryButton = document.querySelector('.gallery__next');
   galleryImage.src = data.images[0];
+
+  // Change images with previous and next buttons
+  const imageContainer = document.querySelector('.gallery__image');
+  let imgIndicator = 1;
+
+  previousGalleryButton.addEventListener('click', () => {
+    changePreviousImage(imageContainer);
+  });
+  nextGalleryButton.addEventListener('click', () => {
+    changeNextImage(imageContainer);
+  });
 
   const changeNextImage = (imgContainer) => {
     if (imgIndicator === 3) {
@@ -39,9 +50,7 @@ const detailSection = async () => {
     } else {
       imgIndicator++;
     }
-    // imgContainer.style.backgroundImage = `url('../assets/images/image-product-${imgIndicator}.jpg')`;
     imgContainer.innerHTML = `<img src="${data.images[imgIndicator]}" alt="product">`;
-  
   }
   const changePreviousImage = (imgContainer) => {
     if (imgIndicator === 0) {
@@ -51,65 +60,6 @@ const detailSection = async () => {
     }
     imgContainer.innerHTML = `<img src="${data.images[imgIndicator]}" alt="product">`;
   }
-
-  previousGalleryButton.addEventListener('click', () => {
-    changePreviousImage(imageContainer);
-  });
-  nextGalleryButton.addEventListener('click', () => {
-    changeNextImage(imageContainer);
-  });
-
-  const drawProductModal = () => {
-    orderContainer.innerHTML = `
-          <div class="cart-modal__detail-container">
-            <img class="thumbnail-image" src="${data.images[0]}" alt="thumbnail" style="width: 65px; height: 65px;">
-            <div>
-              <p class="cart-modal__product">${data.name}..</p>
-              <p class="cart-modal__price">$${data.price}.00 x${lastValue} <span>$${lastValue * data.price}.00</span></p>
-            </div>
-            <img class="cart-modal__delete" src="./assets/images/icon-delete.svg" alt="delete">
-          </div>
-          <button class="cart-modal__checkout">Checkout</button>
-        `;
-        deleteProduct();
-        let priceModal = document.querySelector('.cart-modal__price');
-        priceModal.innerHTML = `${data.price} x${lastValue} <span>$${lastValue * 125}.00</span>`;
-  };
-
-  const addToCartButton = document.querySelector('.product-details__button');
-  let cartNotification = document.querySelector('.header__cart--counter');
-  let lastValue = Number.parseInt(cartNotification.textContent, 10);
-
-  addToCartButton.addEventListener('click', () => {
-    lastValue += quantityProduct;
-    cartNotification.textContent = lastValue;
-    cartNotification.style.display = 'block';
-    drawProductModal();
-  });
-
-  // show modal cart shopping
-  const cartIcon = document.querySelector('.header__cart');
-  const cartModal = document.querySelector('.cart-modal');
-  // let priceModal = document.querySelector('.cart-modal__price');
-  const orderContainer = document.querySelector('.cart-modal__checkout-container');
-
-  cartIcon.addEventListener('click', () => {
-    cartModal.classList.toggle('show');
-    if (lastValue === 0) {
-      orderContainer.innerHTML = `<p class="cart-empty">Your cart is empty</p>`;
-    } else {
-      drawProductModal();
-    }
-  });
-
-  // Delete Products Shopping Cart
-  const deleteProduct = () => {
-    const deleteProductCart = document.querySelector('.cart-modal__delete');
-    deleteProductCart.addEventListener('click', () => {
-      orderContainer.innerHTML = `<p class="cart-empty">Your cart is empty</p>`;
-      lastValue = 0;
-      cartNotification.textContent = lastValue;
-  });
 
   const thumb1 = document.querySelector('#thumbnail-1');
   const thumb2 = document.querySelector('#thumbnail-2');
@@ -122,7 +72,7 @@ const detailSection = async () => {
   thumb4.src = data.thumbnails[3]
 
   let thumbnails = document.querySelectorAll('.gallery__thumbnail');
-  thumbnails = [...thumbnails] // transform from nodeList to array
+  thumbnails = [...thumbnails] // transform from NodeList to Array
   thumbnails.forEach(thumbnail => {
     thumbnail.addEventListener('click', e => {
       const stringId = e.target.id;
@@ -162,19 +112,104 @@ const detailSection = async () => {
     changeNextImage(imageModalContainer);
   });
 
-  
-    const modalCheckoutButton = document.querySelector('.cart-modal__checkout');
-    const modalCheckout = document.querySelector('.modal-checkout__background');
-    const closeModal = document.querySelector('.modal-checkout__close-icon');
-    modalCheckoutButton.addEventListener('click', () => {
-      console.log('click checkout');
-      modalCheckout.style.display = 'grid';
-    });
-    closeModal.addEventListener('click', () => {
-      console.log('click en cerrar');
-      modalCheckout.style.display = 'none';
+  // Draw product into modal cart
+  const drawProductModal = () => {
+    orderContainer.innerHTML = `
+          <div class="cart-modal__detail-container">
+            <img class="thumbnail-image" src="${data.images[0]}" alt="thumbnail" style="width: 65px; height: 65px;">
+            <div>
+              <p class="cart-modal__product">${data.name}..</p>
+              <p class="cart-modal__price">$${data.price}.00 x${lastValue} <span>$${lastValue * data.price}.00</span></p>
+            </div>
+            <img class="cart-modal__delete" src="./assets/images/icon-delete.svg" alt="delete">
+          </div>
+          <button class="cart-modal__checkout">Checkout</button>
+        `;
+    deleteProduct();
+    let priceModal = document.querySelector('.cart-modal__price');
+    priceModal.innerHTML = `${data.price} x${lastValue} <span>$${lastValue * 125}.00</span>`;
+  };
+
+  // Delete Products Shopping Cart
+  const deleteProduct = () => {
+    const deleteProductCart = document.querySelector('.cart-modal__delete');
+    deleteProductCart.addEventListener('click', () => {
+    orderContainer.innerHTML = `<p class="cart-empty">Your cart is empty</p>`;
+    lastValue = 0;
+    cartNotification.textContent = lastValue;
     });
   }
+  // Add products to shopping cart
+  const addToCartButton = document.querySelector('.product-details__button');
+  let cartNotification = document.querySelector('.header__cart--counter');
+  let lastValue = Number.parseInt(cartNotification.textContent, 10);
+
+  addToCartButton.addEventListener('click', () => {
+    lastValue += quantityProduct;
+    cartNotification.textContent = lastValue;
+    cartNotification.style.display = 'block';
+    drawProductModal();
+  });
+
+  // show modal cart shopping
+  const cartIcon = document.querySelector('.header__cart');
+  const cartModal = document.querySelector('.cart-modal');
+  const orderContainer = document.querySelector('.cart-modal__checkout-container');
+
+  cartIcon.addEventListener('click', () => {
+    cartModal.classList.toggle('show');
+    if (lastValue === 0) {
+      orderContainer.innerHTML = `<p class="cart-empty">Your cart is empty</p>`;
+    } else {
+      drawProductModal();
+    }
+  });
+
+  // Show Modal Gallery (by clicking principal image)
+  const modalGallery = document.querySelector('.modal-gallery__background');
+  const closeModalGalleryButton = document.querySelector('.modal-gallery__close');
+
+  imageContainer.addEventListener('click', () => {
+    if (window.innerWidth >= 1115) {
+      modalGallery.style.display = 'grid';
+    }
+  });
+
+  closeModalGalleryButton.addEventListener('click', () => {
+    modalGallery.style.display = 'none';
+  });
+
+  // Show modal checkout
+  const modalCheckoutButton = document.querySelector('.cart-modal__checkout');
+  const modalCheckout = document.querySelector('.modal-checkout__background');
+  const closeModal = document.querySelector('.modal-checkout__close-icon');
+  modalCheckoutButton.addEventListener('click', () => {
+    modalCheckout.style.display = 'grid';
+  });
+  closeModal.addEventListener('click', () => {
+    modalCheckout.style.display = 'none';
+  });
+  
+  // Cart counter
+  let spanCount = document.querySelector('.quantity__number');
+  let addCounterBtn = document.querySelector('.plus-quantity');
+  let minusCounterBtn = document.querySelector('.minus-quantity');
+  let quantityProduct = 0;
+
+  addCounterBtn.addEventListener('click', () => {
+    quantityProduct++;
+    spanCount.textContent = quantityProduct;
+  });
+
+  minusCounterBtn.addEventListener('click', () => {
+    quantityProduct--;
+    if (quantityProduct <= 0) {
+      spanCount.textContent = 0;
+    } else {
+      spanCount.textContent = quantityProduct;
+    }
+  });
+}
 
 // Open/Close Navbar Modal
 const burgerMenu = document.querySelector('.header__menu');
@@ -187,76 +222,6 @@ burgerMenu.addEventListener('click', () => {
 closeNavbar.addEventListener('click', () => {
   modalNavbar.classList.remove('show');
 });
-
-// Cart counter
-let spanCount = document.querySelector('.quantity__number');
-let addCounterBtn = document.querySelector('.plus-quantity');
-let minusCounterBtn = document.querySelector('.minus-quantity');
-let quantityProduct = 0;
-
-addCounterBtn.addEventListener('click', () => {
-  quantityProduct++;
-  spanCount.textContent = quantityProduct;
-});
-
-minusCounterBtn.addEventListener('click', () => {
-  quantityProduct--;
-  if (quantityProduct <= 0) {
-    spanCount.textContent = 0;
-  } else {
-    spanCount.textContent = quantityProduct;
-  }
-});
-}
-
-
-
-// Change images with previous and next buttons
-const imageContainer = document.querySelector('.gallery__image');
-const previousGalleryButton = document.querySelector('.gallery__previuos');
-const nextGalleryButton = document.querySelector('.gallery__next');
-let imgIndicator = 1;
-
-previousGalleryButton.addEventListener('click', () => {
-  changePreviousImage(imageContainer);
-});
-nextGalleryButton.addEventListener('click', () => {
-  changeNextImage(imageContainer);
-});
-
-
-// Show Modal Gallery (click in principal image)
-const modalGallery = document.querySelector('.modal-gallery__background');
-const closeModalGalleryButton = document.querySelector('.modal-gallery__close');
-
-imageContainer.addEventListener('click', () => {
-  if (window.innerWidth >= 1115) {
-    modalGallery.style.display = 'grid';
-  }
-});
-
-closeModalGalleryButton.addEventListener('click', () => {
-  modalGallery.style.display = 'none';
-});
-
-// Auxiliar Functions
-const drawProductModal = () => {
-  orderContainer.innerHTML = `
-        <div class="cart-modal__detail-container">
-          <img class="thumbnail-image" src="./assets/images/image-product-1-thumbnail.jpg" alt="thumbnail">
-          <div>
-            <p class="cart-modal__product">Autumn Limited Edition..</p>
-            <p class="cart-modal__price">$125.00 x${lastValue} <span>$${lastValue * 375}.00</span></p>
-          </div>
-          <img class="cart-modal__delete" src="./assets/images/icon-delete.svg" alt="delete">
-        </div>
-        <button class="cart-modal__checkout">Checkout</button>
-      `;
-      deleteProduct();
-      let priceModal = document.querySelector('.cart-modal__price');
-      priceModal.innerHTML = `$125.00 x${lastValue} <span>$${lastValue * 125}.00</span>`;
-};
-
 
 
 detailSection();
