@@ -112,6 +112,20 @@ const detailSection = async () => {
     changeNextImage(imageModalContainer);
   });
 
+  // Show Modal Gallery (by clicking principal image)
+  const modalGallery = document.querySelector('.modal-gallery__background');
+  const closeModalGalleryButton = document.querySelector('.modal-gallery__close');
+
+  imageContainer.addEventListener('click', () => {
+    if (window.innerWidth >= 1115) {
+      modalGallery.style.display = 'grid';
+    }
+  });
+
+  closeModalGalleryButton.addEventListener('click', () => {
+    modalGallery.style.display = 'none';
+  });
+
   // Draw product into modal cart
   const drawProductModal = () => {
     orderContainer.innerHTML = `
@@ -127,9 +141,23 @@ const detailSection = async () => {
         `;
     deleteProduct();
     let priceModal = document.querySelector('.cart-modal__price');
-    priceModal.innerHTML = `${data.price} x${lastValue} <span>$${lastValue * 125}.00</span>`;
+    priceModal.innerHTML = `$${data.price} x${lastValue} <span>$${lastValue * data.price}.00</span>`;
+  
+    // Show modal checkout
+    const modalCheckoutButton = document.querySelector('.cart-modal__checkout');
+    const modalCheckout = document.querySelector('.modal-checkout__background');
+    const closeModal = document.querySelector('.modal-checkout__close-icon');
+
+    modalCheckoutButton.addEventListener('click', () => {
+      console.log('click');
+      modalCheckout.style.display = 'grid';
+    });
+    closeModal.addEventListener('click', () => {
+      modalCheckout.style.display = 'none';
+    });
   };
 
+  
   // Delete Products Shopping Cart
   const deleteProduct = () => {
     const deleteProductCart = document.querySelector('.cart-modal__delete');
@@ -139,6 +167,8 @@ const detailSection = async () => {
     cartNotification.textContent = lastValue;
     });
   }
+  
+
   // Add products to shopping cart
   const addToCartButton = document.querySelector('.product-details__button');
   let cartNotification = document.querySelector('.header__cart--counter');
@@ -165,30 +195,7 @@ const detailSection = async () => {
     }
   });
 
-  // Show Modal Gallery (by clicking principal image)
-  const modalGallery = document.querySelector('.modal-gallery__background');
-  const closeModalGalleryButton = document.querySelector('.modal-gallery__close');
-
-  imageContainer.addEventListener('click', () => {
-    if (window.innerWidth >= 1115) {
-      modalGallery.style.display = 'grid';
-    }
-  });
-
-  closeModalGalleryButton.addEventListener('click', () => {
-    modalGallery.style.display = 'none';
-  });
-
-  // Show modal checkout
-  const modalCheckoutButton = document.querySelector('.cart-modal__checkout');
-  const modalCheckout = document.querySelector('.modal-checkout__background');
-  const closeModal = document.querySelector('.modal-checkout__close-icon');
-  modalCheckoutButton.addEventListener('click', () => {
-    modalCheckout.style.display = 'grid';
-  });
-  closeModal.addEventListener('click', () => {
-    modalCheckout.style.display = 'none';
-  });
+  
   
   // Cart counter
   let spanCount = document.querySelector('.quantity__number');
@@ -209,6 +216,8 @@ const detailSection = async () => {
       spanCount.textContent = quantityProduct;
     }
   });
+
+  
 }
 
 // Open/Close Navbar Modal
@@ -222,6 +231,8 @@ burgerMenu.addEventListener('click', () => {
 closeNavbar.addEventListener('click', () => {
   modalNavbar.classList.remove('show');
 });
+
+
 
 
 detailSection();
