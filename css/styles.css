@@ -621,6 +621,7 @@
   outline: 1.5px solid #FF7D1A;
 }
 .modal-checkout__button {
+  cursor: pointer;
   width: 240px;
   height: 40px;
   border: none;

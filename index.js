@@ -12,6 +12,8 @@ const getHash = () => {
   return params.get('id') || '/';
 };
 
+
+
 const detailSection = async () => {
   const id = Number.parseInt(getHash(), 10);
   const data = await getData(id);
@@ -149,14 +151,12 @@ const detailSection = async () => {
     const closeModal = document.querySelector('.modal-checkout__close-icon');
 
     modalCheckoutButton.addEventListener('click', () => {
-      console.log('click');
       modalCheckout.style.display = 'grid';
     });
     closeModal.addEventListener('click', () => {
       modalCheckout.style.display = 'none';
     });
   };
-
   
   // Delete Products Shopping Cart
   const deleteProduct = () => {
@@ -219,6 +219,7 @@ const detailSection = async () => {
 
   
 }
+
 
 // Open/Close Navbar Modal
 const burgerMenu = document.querySelector('.header__menu');

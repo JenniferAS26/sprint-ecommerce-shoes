@@ -401,5 +401,24 @@
       ]
     }
   ],
-  "users": []
+  "users": [
+    {
+      "name": "Jennifer Alarcón Serna",
+      "identification": "1088016820",
+      "creditCard": "1234-4898-5458-8958",
+      "id": 1
+    },
+    {
+      "name": "Jennifer Alarcon",
+      "identification": "1088016810",
+      "creditCard": "51851251",
+      "id": 2
+    },
+    {
+      "name": "Alex",
+      "identification": "415",
+      "creditCard": "5125415",
+      "id": 3
+    }
+  ]
 }
