@@ -74,46 +74,30 @@ const homeSection = async () => {
   });
 };
 
-const drawProductModal = () => {
-  orderContainer.innerHTML = `
-        <div class="cart-modal__detail-container">
-          <img class="thumbnail-image" src="${data.images[0]}" alt="thumbnail" style="width: 65px; height: 65px;">
-          <div>
-            <p class="cart-modal__product">${data.name}..</p>
-            <p class="cart-modal__price">$${data.price}.00 x${lastValue} <span>$${lastValue * data.price}.00</span></p>
-          </div>
-          <img class="cart-modal__delete" src="./assets/images/icon-delete.svg" alt="delete">
-        </div>
-        <button class="cart-modal__checkout">Checkout</button>
-      `;
-      deleteProduct();
-      let priceModal = document.querySelector('.cart-modal__price');
-      priceModal.innerHTML = `${data.price} x${lastValue} <span>$${lastValue * 125}.00</span>`;
-};
+// Open/Close Navbar Modal
+const burgerMenu = document.querySelector('.header__menu');
+const modalNavbar = document.querySelector('.modal-navbar__background');
+const closeNavbar = document.querySelector('.modal-navbar__close-icon');
+
+burgerMenu.addEventListener('click', () => {
+  modalNavbar.classList.toggle('show');
+});
+closeNavbar.addEventListener('click', () => {
+  modalNavbar.classList.remove('show');
+});
+
+// show modal cart shopping
+const cartIcon = document.querySelector('.header__cart');
+const cartModal = document.querySelector('.cart-modal');
+// let priceModal = document.querySelector('.cart-modal__price');
+const orderContainer = document.querySelector('.cart-modal__checkout-container');
+
+cartIcon.addEventListener('click', () => {
+  cartModal.classList.toggle('show');
+    orderContainer.innerHTML = `<p class="cart-empty">Your cart is empty</p>`;
+});
 
 
-// document.addEventListener('DOMContentLoaded', () => {
-//   // Verificar si hay datos de carrito en el almacenamiento local y cargarlos si existen
-//   const cartData = localStorage.getItem('cartData');
-//   if (cartData) {
-//     const parsedCartData = JSON.parse(cartData);
-//     // Cargar los datos del carrito en la interfaz gráfica
-//     // ...
-//   }
-
-//   // Obtener referencia al elemento del carrito
-//   const cartButton = document.querySelector('.header__cart');
-//   const cartNotification = document.querySelector('.header__cart--counter');
-
-//   // Función para manejar el evento click del carrito
-//   const handleCartClick = () => {
-//     // Realizar las acciones correspondientes al hacer clic en el carrito
-//     // ...
-//   };
-
-//   // Agregar el evento click al botón del carrito
-//   cartButton.addEventListener('click', handleCartClick);
-// });
 
 
 homeSection();

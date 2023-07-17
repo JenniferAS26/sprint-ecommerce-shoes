@@ -400,5 +400,55 @@
         "https://images.unsplash.com/photo-1613972798759-e677d3fb640f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=440&q=80"
       ]
     }
+  ],
+  "users": [
+    {
+      "name": "Jennifer Alarcón Serna",
+      "identification": "1088016820",
+      "creditCard": "1234-4898-5458-8958",
+      "id": 1
+    },
+    {
+      "name": "Jennifer Alarcon",
+      "identification": "1088016810",
+      "creditCard": "51851251",
+      "id": 2
+    },
+    {
+      "name": "Alex",
+      "identification": "415",
+      "creditCard": "5125415",
+      "id": 3
+    },
+    {
+      "name": "Eulalia Morales",
+      "identification": "39468789",
+      "creditCard": "0000-0000-0000-0001",
+      "id": 4
+    },
+    {
+      "name": "Kelly Saldaña",
+      "identification": "109955334",
+      "telephone": "3154987",
+      "email": "kelly@email.com",
+      "creditCard": "123578964123",
+      "id": 5
+    },
+    {
+      "name": "Jennifer Alarcon",
+      "identification": "1088016820",
+      "telephone": "3154281024",
+      "email": "jenniferalarconserna@gmail.com",
+      "creditCard": "1234567896358",
+      "id": 6
+    },
+    {
+      "name": "Kelly Saldaña",
+      "identification": "12345678",
+      "telephone": "3204698125",
+      "email": "kellyS@gmail.com",
+      "creditCard": "12345678910",
+      "id": 7
+    }
   ]
 }
