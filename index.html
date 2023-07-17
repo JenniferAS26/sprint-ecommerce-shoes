@@ -116,7 +116,7 @@
 
 
 	<!-- modal checkout start -->
-	<div class="modal-checkout__background">
+	<!-- <div class="modal-checkout__background">
 		<div class="modal-checkout">
 		<img class="modal-checkout__close-icon" src="../assets/images/icon-close.svg" alt="close">
 		<form class="modal-checkout__form">
@@ -126,10 +126,82 @@
 			<button class="modal-checkout__button" type="submit">Enviar datos</button>
 		</form>
 		</div>
-	</div>
-	<!-- modal checkout start -->
-	
+	</div> -->
+	<!-- modal checkout end -->
 
+	<!-- modal checkout start -->
+	<div class="modal-checkout__background">
+		<div class="modal-checkout">
+			<!-- <img class="modal-checkout__close-icon" src="../assets/images/icon-close.svg" alt="close"> -->
+			<section class="modal-checkout__card-image-section">
+				<div class="card">
+					<img class="card__logo" src="./assets/icons/card-logo.svg" alt="card logo">
+					<p class="card__number">0000 0000 0000 0000</p>
+					<div class="card__details">
+						<p class="card__details-name">John Smith</p>
+						<p class="card__details-date"><span class="card__month">00</span><span class="card__">/</span><span class="card__day">00</span></p>
+					</div>
+				</div>
+				<div class="card-back">
+					<p class="card-back__cvc">000</p>
+				</div>
+			</section>
+			<section class="modal-checkout__form-section">
+				<form class="modal-checkout__form form">
+					<label class="form__label" for="input-name">Nombre Completo</label>
+					<input class="modal-checkout__input form__input" name="name" id="input-name" type="text" placeholder="e.g. John Smith"/>
+					<div class="modal-checkout__name--error error"></div>
+
+					<label class="form__label" for="input-id">Número de identificación</label>
+					<input class="modal-checkout__input form__input" name="identification" id="input-id" type="text" placeholder="e.g. 111111111"/>
+					<div class="modal-checkout__identification--error error"></div>
+
+					<label class="form__label" for="input-telephone">Teléfono</label>
+					<input class="modal-checkout__input form__input" name="telephone" id="input-telephone" type="text" placeholder="e.g. 3332221111"/>
+					<div class="modal-checkout__telephone--error error"></div>
+
+					<label class="form__label" for="input-email">Correo electrónico</label>
+					<input class="modal-checkout__input form__input" name="email" id="input-email" type="text" placeholder="e.g. example@mail.com"/>
+					<div class="modal-checkout__email--error error"></div>
+
+					<label class="form__label" for="input-creditcard">Número de tarjeta</label>
+					<input class="modal-checkout__input form__input" name="creditcard" id="input-creditcard" type="text" placeholder="e.g. 0000 1234 4567 8910" maxlength="19"/>
+					<div class="modal-checkout__creditcard--error error"></div>
+					<div class="form__date-cvc">
+						<label class="form__label" for="cardMonth">Exp. Date (MM/YY)</label>
+						<label class="form__label" for="cardCVC">CVC</label>
+						
+						<div class="form__date">
+							<input class="modal-checkout__input form__input" type="text" maxlength="2" name="cardMonth" id="cardMonth" placeholder="MM">
+							<input class="modal-checkout__input form__input" type="text" maxlength="2" name="cardYear" id="cardYear" placeholder="YY">
+						</div>
+						
+						<input class="modal-checkout__input form__input" type="text" maxlength="3" placeholder="e.g. 123" name="cardCVC" id="cardCVC">
+						
+						<div class="form__errors-container">
+							<div class="form__input-mm--error error"></div>
+							<div class="form__input-yy--error error"></div>
+						</div>
+						
+						<div class="form__input-cvc--error error"></div>
+					</div>
+					<div class="form__button-container">
+						<button class="modal-checkout__close-icon" type="button">Cancelar</button>
+						<button class="modal-checkout__button form__button" type="submit">Confirmar</button>
+					</div>
+				</form>
+			</section>
+			<section class="thanks-section">
+				<img class="thanks-section__img" src="./assets/icons/check.png" alt="complete icon">
+				<h2 class="thanks-section__title">¡Gracias!</h2>
+				<p class="thanks-section__text">Hemos añadido los detalles de la tarjeta</p>
+				<button class="thanks-section__button">Continuar</button>
+			</section>
+		</div>
+		
+	</div>
+	<!-- modal checkout end -->
+	
 	<!-- gallery modal start -->
 	<div class="modal-gallery__background">
 		<section class="modal-gallery">
