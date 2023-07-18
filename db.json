@@ -449,6 +449,22 @@
       "email": "kellyS@gmail.com",
       "creditCard": "12345678910",
       "id": 7
+    },
+    {
+      "name": "Santiago Olarte",
+      "identification": "1099345987",
+      "telephone": "3167892546",
+      "email": "san@gmail.com",
+      "creditCard": "1478 9532 4687 2369",
+      "id": 8
+    },
+    {
+      "name": "Kevin Hernandez",
+      "identification": "35469785",
+      "telephone": "3201478695",
+      "email": "kev@mail.com",
+      "creditCard": "6085 0169 7412 2146",
+      "id": 9
     }
   ]
 }

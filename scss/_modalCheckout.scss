@@ -11,8 +11,7 @@
     @include mixins.backgroundModal;
     z-index: 3;
     display: none;
-    place-content: center;
-    
+    place-content: center;  
   }
   &__card-image-section {
     background-color: v.$primary-color;
