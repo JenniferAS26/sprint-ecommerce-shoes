@@ -140,34 +140,9 @@ const detailSection = async () => {
           </div>
           <button class="cart-modal__checkout">Checkout</button>
         `;
-    deleteProduct();
-    let priceModal = document.querySelector('.cart-modal__price');
-    priceModal.innerHTML = `$${data.price} x${lastValue} <span>$${lastValue * data.price}.00</span>`;
-
-  
-    // Show modal checkout
-    const modalCheckoutButton = document.querySelector('.cart-modal__checkout');
-    const modalCheckout = document.querySelector('.modal-checkout__background');
-    const closeModal = document.querySelector('.modal-checkout__close-icon');
-
-    modalCheckoutButton.addEventListener('click', () => {
-      modalCheckout.style.display = 'grid';
-    });
-    closeModal.addEventListener('click', () => {
-      modalCheckout.style.display = 'none';
-    });
-
-    const productToAdd = {
-      id: data.id,
-      name: data.name,
-      price: data.price,
-      quantity: lastValue,
-      image: data.images[0]
-    };
-    cart.push(productToAdd);
-  
-    // Guardar el carrito actualizado en el Local Storage
-    localStorage.setItem("cart", JSON.stringify(cart));
+        deleteProduct();
+        let priceModal = document.querySelector('.cart-modal__price');
+        priceModal.innerHTML = `${data.price} x${lastValue} <span>$${lastValue * data.price}.00</span>`;
   };
   
   // Delete Products Shopping Cart
@@ -286,8 +261,26 @@ const filterProduct = (value) => {
   });
 };
 
-const redirectToHome = () => {
-  window.location.href = "home.html"; // Cambia "home.html" por la URL de tu página home
+closeModalGalleryButton.addEventListener('click', () => {
+  modalGallery.style.display = 'none';
+});
+
+// Auxiliar Functions
+const drawProductModal = () => {
+  orderContainer.innerHTML = `
+        <div class="cart-modal__detail-container">
+          <img class="thumbnail-image" src="./assets/images/image-product-1-thumbnail.jpg" alt="thumbnail">
+          <div>
+            <p class="cart-modal__product">Autumn Limited Edition..</p>
+            <p class="cart-modal__price">$125.00 x${lastValue} <span>$${lastValue * 375}.00</span></p>
+          </div>
+          <img class="cart-modal__delete" src="./assets/images/icon-delete.svg" alt="delete">
+        </div>
+        <button class="cart-modal__checkout">Checkout</button>
+      `;
+      deleteProduct();
+      let priceModal = document.querySelector('.cart-modal__price');
+      priceModal.innerHTML = `$125.00 x${lastValue} <span>$${lastValue * 125}.00</span>`;
 };
 
 const backButton = document.querySelector(".back-to-home");
