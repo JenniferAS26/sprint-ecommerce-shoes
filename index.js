@@ -1,4 +1,5 @@
 const api = 'http://localhost:3000/products';
+let cart = [];
 
 const getData = async (id) => {
   const apiUrl = id ? `${api}/${id}` : api;
@@ -11,8 +12,6 @@ const getHash = () => {
   const params = new URLSearchParams(location.search);
   return params.get('id') || '/';
 };
-
-
 
 const detailSection = async () => {
   const id = Number.parseInt(getHash(), 10);
@@ -144,6 +143,7 @@ const detailSection = async () => {
     deleteProduct();
     let priceModal = document.querySelector('.cart-modal__price');
     priceModal.innerHTML = `$${data.price} x${lastValue} <span>$${lastValue * data.price}.00</span>`;
+
   
     // Show modal checkout
     const modalCheckoutButton = document.querySelector('.cart-modal__checkout');
@@ -156,6 +156,18 @@ const detailSection = async () => {
     closeModal.addEventListener('click', () => {
       modalCheckout.style.display = 'none';
     });
+
+    const productToAdd = {
+      id: data.id,
+      name: data.name,
+      price: data.price,
+      quantity: lastValue,
+      image: data.images[0]
+    };
+    cart.push(productToAdd);
+  
+    // Guardar el carrito actualizado en el Local Storage
+    localStorage.setItem("cart", JSON.stringify(cart));
   };
   
   // Delete Products Shopping Cart
@@ -187,6 +199,7 @@ const detailSection = async () => {
   const orderContainer = document.querySelector('.cart-modal__checkout-container');
 
   cartIcon.addEventListener('click', () => {
+
     cartModal.classList.toggle('show');
     if (lastValue === 0) {
       orderContainer.innerHTML = `<p class="cart-empty">Your cart is empty</p>`;
@@ -233,7 +246,51 @@ closeNavbar.addEventListener('click', () => {
   modalNavbar.classList.remove('show');
 });
 
+const filterProduct = (value) => {
 
+  //select all shop__container
+  let elements = document.querySelectorAll(".shop__container");
+  //loop through all shop__container
+  elements.forEach((element) => {
+    //display all shop__container on 'all' button click
+    let womenElements = element.querySelectorAll(".women");
+    let menElements = element.querySelectorAll(".men");
 
+    if (value === "all") {
+      womenElements.forEach((el) => {
+        el.style.display = "grid";
+      });
+      menElements.forEach((el) => {
+        el.style.display = "grid";
+      })
+    } else {
+      //Check if element contains category class
+      if (value === "Men") {
+        //display element based on category
+        womenElements.forEach((el) => {
+          el.style.display = "none";
+        });
+        menElements.forEach((el) => {
+          el.style.display = "grid";
+        });
+      } else if (value === "Women") {
+        //display element based on category
+        womenElements.forEach((el) => {
+          el.style.display = "grid";
+        });
+        menElements.forEach((el) => {
+          el.style.display = "none";
+        });
+      }
+    }
+  });
+};
+
+const redirectToHome = () => {
+  window.location.href = "home.html"; // Cambia "home.html" por la URL de tu página home
+};
+
+const backButton = document.querySelector(".back-to-home");
+backButton.addEventListener("click", redirectToHome);
 
 detailSection();

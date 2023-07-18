@@ -20,6 +20,10 @@
     align-items: center;
     @media (min-width: 1115px) {
       width: 600px;
+    }  &__active {
+      background-color: variables.$primary-color;
+      color: #ffffff;
+      }
     }
   }
   &__menu {
@@ -69,8 +73,9 @@
       border: 2px solid variables.$primary-color;
       border-radius: 50%;
     }
-  }
 }
+
+
 
 
 // .class-text {
