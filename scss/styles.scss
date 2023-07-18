@@ -64,6 +64,7 @@ a {
 
 .show {
   display: grid;
+  grid-template-rows: 80px 1fr;
 }
 
 .cart-empty {
