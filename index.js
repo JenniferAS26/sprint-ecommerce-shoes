@@ -12,8 +12,6 @@ const getHash = () => {
   return params.get('id') || '/';
 };
 
-
-
 const detailSection = async () => {
   const id = Number.parseInt(getHash(), 10);
   const data = await getData(id);
@@ -178,10 +176,19 @@ const detailSection = async () => {
     lastValue += quantityProduct;
     cartNotification.textContent = lastValue;
     cartNotification.style.display = 'block';
+    swal({
+      title: "Se han añadido con éxito los productos al carrito",
+      icon: "./assets/icons/check.png",
+      button: "Continuar",
+      customClass: {
+        button: 'custom-button',
+        htmlContainer: 'custom-container'
+      },
+    });
     drawProductModal();
   });
 
-  // show modal cart shopping
+  // show modal shopping cart 
   const cartIcon = document.querySelector('.header__cart');
   const cartModal = document.querySelector('.cart-modal');
   const orderContainer = document.querySelector('.cart-modal__checkout-container');
