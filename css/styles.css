@@ -120,7 +120,7 @@
 .modal-navbar {
   background-color: #ffffff;
   width: 200px;
-  height: 100%;
+  height: 100vh;
   padding: 28px 24px;
 }
 .modal-navbar__background {
@@ -373,7 +373,7 @@
   border-radius: 8px;
   box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.3);
   position: absolute;
-  top: 50px;
+  top: 70px;
   right: 10px;
   background-color: #ffffff;
   z-index: 3;
@@ -878,12 +878,14 @@
 }
 
 .footer {
-  background-color: #FF7D1A;
-  color: #ffffff;
+  background-color: #ffffff;
+  border-top: 1px solid rgba(211, 211, 211, 0.682);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  width: 375px;
+  margin: 80px auto;
 }
 .footer h4 {
   font-size: 1.8rem;
@@ -901,12 +903,13 @@
   padding-bottom: 20px;
 }
 .footer__names-container a {
-  color: #ffffff;
+  color: #68707d;
   font-size: 1.5rem;
 }
 .footer__names-container a p:hover {
   transform: scale(1.2);
   font-weight: 600;
+  color: #FF7D1A;
 }
 @media (min-width: 1115px) {
   .footer {
@@ -988,6 +991,7 @@ a {
 
 .show {
   display: grid;
+  grid-template-rows: 80px 1fr;
 }
 
 .cart-empty {
