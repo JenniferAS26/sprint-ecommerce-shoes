@@ -9,6 +9,7 @@
 @use 'modalGallery';
 @use 'home';
 @use 'modalCheckout';
+@use 'footer';
 
 * {
   margin: 0;
@@ -30,6 +31,13 @@ body {
     position: relative;
     @media (min-width: 1115px) {
       width: 1115px;
+    }
+  }
+  .footer {
+    height: auto;
+    @media (min-width: 1115px) {
+      width: 1115px;
+      height: auto;
     }
   }
 }
