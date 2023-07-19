@@ -84,12 +84,23 @@ const homeSection = async () => {
 const burgerMenu = document.querySelector('.header__menu');
 const modalNavbar = document.querySelector('.modal-navbar__background');
 const closeNavbar = document.querySelector('.modal-navbar__close-icon');
+// const aCollections = document.querySelector('.a-collections');
+// const aMen = document.querySelector('.a-men');
+// const aWomen = document.querySelector('.a-women');
+const aAcount = document.querySelector('.a-account');
+const aContact = document.querySelector('.a-contact');
 
 burgerMenu.addEventListener('click', () => {
   modalNavbar.classList.toggle('show');
 });
 closeNavbar.addEventListener('click', () => {
   modalNavbar.classList.remove('show');
+});
+aAcount.addEventListener('click', () => {
+  modalNavbar.style.display = 'none';
+});
+aContact.addEventListener('click', () => {
+  modalNavbar.style.display = 'none';
 });
 
 // show modal cart shopping
