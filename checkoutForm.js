@@ -22,29 +22,7 @@ form.addEventListener('submit', async e => {
       })
     });
   const data = await response.json();
-  
-  // Validation fields form
-  //  // name validation
-  //  verifyFilled(nameInput, nameErrorDiv);
-  //  // id number validation
-  //  verifyFilled(IdNumberInput, IdErrorDiv);
-  //  // telephone validation
-  //  verifyFilled(telephoneInput, telephoneErrorDiv);
-  //  // email validation
-  //  verifyFilled(emailInput, emailErrorDiv);
-  //  // credit card number validation
-  //  verifyFilled(numberCreditCardInput, numberCreditCardErrorDiv);
-  //  // month validation
-  //  if (Number.parseInt(monthInput.value, 10) > 0 && Number.parseInt(monthInput.value, 10) <= 12) {
-  //    showError(monthInput, monthErrorDiv, '', false);
- 
-  //  } else {
-  //    showError(monthInput, monthErrorDiv, 'Mes incorrecto');
-  //  }
-  //  // year validation
-  //  verifyFilled(yearInput, yearErrorDiv);
-  //  // cvc validation
-  //  verifyFilled(cvcInput, cvcErrorDiv);
+
 });
 
 // Fill image dynamically and validation form
