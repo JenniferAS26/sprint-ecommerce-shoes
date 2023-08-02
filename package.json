@@ -287,12 +287,12 @@
     "sass",
     "javascript"
   ],
-  "author": "Jennifer Alarcón, Kelly Saldaña, Manuela Moreno, Santiago Sierra",
+  "author": "Jennifer Alarcón, Kelly Saldaña, Manuela Moreno",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/JenniferAS26/sprint-ecommerce-shoes/issues"
   },
-  "homepage": "https://github.com/JenniferAS26/sprint-ecommerce-shoes#readme",
+  "homepage": "https://github.com/JenniferAS26/sprint-ecommerce-shoes",
   "devDependencies": {
     "@babel/core": "^7.22.9",
     "babel-loader": "^9.1.3",

@@ -1,17 +1,10 @@
-const api = 'http://localhost:3000/products';
-let cart = [];
-
-const getData = async (id) => {
-  const apiUrl = id ? `${api}/${id}` : api;
-  const response = await fetch(apiUrl);
-  const data = response.json();
-  return data;
-}
+import { getData } from '../services/api.js';
 
 const getHash = () => {
   const params = new URLSearchParams(location.search);
   return params.get('id') || '/';
 };
+let cart = [];
 
 const detailSection = async () => {
   const id = Number.parseInt(getHash(), 10);
@@ -237,63 +230,9 @@ const detailSection = async () => {
     } else {
       spanCount.textContent = quantityProduct;
     }
-  });
-
-  
+  });  
 }
 
-
-// Open/Close Navbar Modal
-const burgerMenu = document.querySelector('.header__menu');
-const modalNavbar = document.querySelector('.modal-navbar__background');
-const closeNavbar = document.querySelector('.modal-navbar__close-icon');
-
-burgerMenu.addEventListener('click', () => {
-  modalNavbar.classList.toggle('show');
-});
-closeNavbar.addEventListener('click', () => {
-  modalNavbar.classList.remove('show');
-});
-
-const filterProduct = (value) => {
-
-  //select all shop__container
-  let elements = document.querySelectorAll(".shop__container");
-  //loop through all shop__container
-  elements.forEach((element) => {
-    //display all shop__container on 'all' button click
-    let womenElements = element.querySelectorAll(".women");
-    let menElements = element.querySelectorAll(".men");
-
-    if (value === "all") {
-      womenElements.forEach((el) => {
-        el.style.display = "grid";
-      });
-      menElements.forEach((el) => {
-        el.style.display = "grid";
-      })
-    } else {
-      //Check if element contains category class
-      if (value === "Men") {
-        //display element based on category
-        womenElements.forEach((el) => {
-          el.style.display = "none";
-        });
-        menElements.forEach((el) => {
-          el.style.display = "grid";
-        });
-      } else if (value === "Women") {
-        //display element based on category
-        womenElements.forEach((el) => {
-          el.style.display = "grid";
-        });
-        menElements.forEach((el) => {
-          el.style.display = "none";
-        });
-      }
-    }
-  });
-};
 
 const redirectToHome = () => {
   window.location.href = "home.html"; // Cambia "home.html" por la URL de tu página home

@@ -1,4 +1,4 @@
-import { getData } from "./src/services/api.js";
+import { getData } from '../services/api.js';
 
 const homeSection = async () => {
   const products = await getData();
@@ -72,30 +72,6 @@ const homeSection = async () => {
     }
   });
 };
-
-// Open/Close Navbar Modal
-const burgerMenu = document.querySelector('.header__menu');
-const modalNavbar = document.querySelector('.modal-navbar__background');
-const closeNavbar = document.querySelector('.modal-navbar__close-icon');
-// const aCollections = document.querySelector('.a-collections');
-// const aMen = document.querySelector('.a-men');
-// const aWomen = document.querySelector('.a-women');
-const aAcount = document.querySelector('.a-account');
-const aContact = document.querySelector('.a-contact');
-
-burgerMenu.addEventListener('click', () => {
-  modalNavbar.classList.toggle('show');
-});
-closeNavbar.addEventListener('click', () => {
-  modalNavbar.classList.remove('show');
-});
-aAcount.addEventListener('click', () => {
-  modalNavbar.style.display = 'none';
-});
-aContact.addEventListener('click', () => {
-  modalNavbar.style.display = 'none';
-});
-
 // show modal cart shopping
 const cartIcon = document.querySelector('.header__cart');
 const cartModal = document.querySelector('.cart-modal');
@@ -106,47 +82,6 @@ cartIcon.addEventListener('click', () => {
   cartModal.classList.toggle('show');
     orderContainer.innerHTML = `<p class="cart-empty">Your cart is empty</p>`;
 });
-
-const filterProduct = (value) => {
-
-  //select all shop__container
-  let elements = document.querySelectorAll(".shop__container");
-  //loop through all shop__container
-  elements.forEach((element) => {
-    //display all shop__container on 'all' button click
-    let womenElements = element.querySelectorAll(".women");
-    let menElements = element.querySelectorAll(".men");
-
-    if (value === "all") {
-      womenElements.forEach((el) => {
-        el.style.display = "grid";
-      });
-      menElements.forEach((el) => {
-        el.style.display = "grid";
-      })
-    } else {
-      //Check if element contains category class
-      if (value === "Men") {
-        //display element based on category
-        womenElements.forEach((el) => {
-          el.style.display = "none";
-        });
-        menElements.forEach((el) => {
-          el.style.display = "grid";
-        });
-      } else if (value === "Women") {
-        //display element based on category
-        womenElements.forEach((el) => {
-          el.style.display = "grid";
-        });
-        menElements.forEach((el) => {
-          el.style.display = "none";
-        });
-      }
-    }
-  });
-};
-
 
 
 homeSection();
