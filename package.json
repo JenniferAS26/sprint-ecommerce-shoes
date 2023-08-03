@@ -273,8 +273,7 @@
     "yocto-queue": "^0.1.0"
   },
   "scripts": {
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development"
+    "start": "json-server --watch db.json --port 3000"
   },
   "repository": {
     "type": "git",

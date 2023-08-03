@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accounts</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__nav">
+        <img class="header__menu" src="../assets/images/icon-menu.svg" alt="menu">
+        <a href="home.html"><img class="header__logo" src="../assets/images/logo.svg" alt="logo"></a>
+        <nav class="navbar">
+          <ul class="navbar__items">
+            <li><a class="navbar__link back-to-home">Collections</a></li>
+            <li><a href="home.html" onclick="filterProduct('Men')" class="navbar__link">Men</a></li>
+            <li><a href="home.html" onclick="filterProduct('Women')" class="navbar__link">Women</a></li>
+            <li><a href="./accounts.html" class="navbar__link">Account</a></li>
+            <li><a href="#" class="navbar__link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header__cart-avatar">
+        <div class="header__cart">
+          <div class="header__cart--counter">0</div>
+          <img src="../assets/images/icon-cart.svg" alt="shopping cart icon">
+        </div>
+        <a href="./registerForm.html"><img class="header__avatar" src="./assets/images/avatarImage.jpg" alt="avatar"></a>
+      </div>
+    </header>
+    <main class="main_content">
+      <div class="user-cards-container">
+        <div class="user-cards-container__card">
+          <img src="" alt="">
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- navbar modal start -->
+	<div class="modal-navbar__background">
+		<nav class="modal-navbar">
+			<img class="modal-navbar__close-icon" src="../assets/images/icon-close.svg" alt="close">
+			<ul class="modal-navbar__items">
+				<li><a href="#" class="modal-navbar__link a-collections" onclick="filterProduct('all')">Collections</a></li>
+				<li><a href="#" class="modal-navbar__link a-men" onclick="filterProduct('Men')">Men</a></li>
+				<li><a href="#" class="modal-navbar__link a-women" onclick="filterProduct('Women')">Women</a></li>
+				<li><a href="./accounts.html" class="modal-navbar__link a-account">Account</a></li>
+				<li><a href="#" class="modal-navbar__link a-contact">Contact</a></li>
+			</ul>
+		</nav>
+	</div>
+	<!-- navbar modal end -->
+
+	<script src="./src/resources/basicFunctionality.js" type="module"></script>
+
+</body>
+</html>

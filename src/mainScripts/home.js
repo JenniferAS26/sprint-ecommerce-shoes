@@ -16,8 +16,7 @@ const homeSection = async () => {
     } else if (product.category == 'Men'){
       shopItems.className = 'shop__items grid men';
     }
-    
-
+  
     const link = document.createElement('a');
     link.href = `#/${product.id}`;
     link.className = 'shop__link button-details';

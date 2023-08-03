@@ -1,5 +1,5 @@
 @use 'variables' as v;
-@use 'mixins';
+@use 'mixins' as m;
 
 .modal-checkout {
   width: 375px;
@@ -8,7 +8,7 @@
   border-radius: 25px;
   position: relative;
   &__background {
-    @include mixins.backgroundModal;
+    @include m.backgroundModal;
     z-index: 3;
     display: none;
     place-content: center;  
@@ -20,8 +20,8 @@
     height: 240px;
     position: relative;
     .card {
-      @include mixins.card('../assets/images/bg-card-front.png');
-      @include mixins.cardPosition(130px, 20px, 190px, 70px);
+      @include m.card('../assets/images/bg-card-front.png');
+      @include m.cardPosition(130px, 20px, 190px, 70px);
       z-index: 1;
       letter-spacing: 2px;
       &__logo {
@@ -54,8 +54,8 @@
       }
     }
     .card-back {
-      @include mixins.card('../assets/images/bg-card-back.png');
-      @include mixins.cardPosition(30px, 65px, 470px, 160px);
+      @include m.card('../assets/images/bg-card-back.png');
+      @include m.cardPosition(30px, 65px, 470px, 160px);
       letter-spacing: 2px;
       &__cvc {
         font-size: 1.6rem;
@@ -83,28 +83,10 @@
       padding: 70px 24px 40px;
       justify-self: center;
       .form__label {
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 1.4rem;
-        font-weight: v.$extrabold-weight;
-        display: block;
-        margin-bottom: 8px;
-        color: v.$secondary-text-color;
+        @include m.formLabelStyle;
       }
       .form__input {
-        width: 100%;
-        height: 40px;
-        padding: 5px 15px;
-        margin-bottom: 20px;
-        border-radius: 8px;
-        border: 1px solid #D3D3D3;
-        &::placeholder {
-          font-size: 1.7rem;
-          letter-spacing: 1px;
-        }
-        &:focus {
-          outline: 1.5px solid v.$primary-color;
-        }
+        @include m.formInputStyle;
       }
       &__date-cvc {
         display: grid;
@@ -120,19 +102,7 @@
         display: flex;
         justify-content: space-between;
         button {
-          cursor: pointer;
-          width: 150px;
-          height: 40px;
-          border: none;
-          border-radius: 10px;
-          background-color: v.$primary-color;
-          color: #ffffff;
-          font-size: 1.7rem;
-          font-weight: v.$semibold-weight;
-          letter-spacing: 1px;
-          @media (min-width: 1115px) {
-            width: 190px;
-          }
+          @include m.buttonStyleForm;
         }
         button:nth-child(1) {
           background-color: #f3bd93;
@@ -212,6 +182,10 @@
     &__card-image-section {
       width: 450px;
       height: 850px;
+    }
+    &__form-container {
+      width: auto;
+      padding-left: 0 !important;
     }
   }
 }
