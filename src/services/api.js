@@ -1,8 +1,9 @@
 import axios from 'https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm';
-const api = 'http://localhost:3000/products';
+
+const api = 'http://localhost:3000/';
 
 const getData = async (id) => {
-  const apiUrl = id ? `${api}/${id}` : api;
+  const apiUrl = id ? `${api}products/${id}` : `${api}products`;
   try {
     const response = await axios.get(apiUrl);
     return response.data;
@@ -12,5 +13,40 @@ const getData = async (id) => {
   }
 };
 
+const saveCheckoutinfo = async (userData) => {
+  const apiUrl = `${api}users/`;
+  try {
+    const response = await axios.post(apiUrl, userData);
+    console.log("response create", response.data)
+    return response
+  } catch (error) {
+    console.error('Error creating product:', error);
+    alert('Hubo un error al crear el usuario. Por favor, inténtalo de nuevo.');
+  }
+}
 
-export { getData };
+const getInfoAccount = async (id) => {
+  const apiUrl = id ? `${api}userAccounts/${id}` : `${api}userAccounts`;
+  try {
+    const response = await axios.get(apiUrl);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching userAccounts:', error);
+    return [];
+  }
+};
+
+const createAccount = async (userData) => {
+  const apiUrl = `${api}userAccounts/`;
+  try {
+    const response = await axios.post(apiUrl, userData);
+    console.log("response create", response.data)
+    return response
+  } catch (error) {
+    console.error('Error creating product:', error);
+    alert('Hubo un error al crear la cuenta. Por favor, inténtalo de nuevo.');
+  }
+}
+
+
+export { getData, saveCheckoutinfo, getInfoAccount, createAccount };

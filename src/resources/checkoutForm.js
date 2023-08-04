@@ -1,3 +1,6 @@
+import { saveCheckoutinfo } from "../services/api.js";
+import { showError } from "./auxiliarFuncs.js";
+
 const form = document.querySelector('.modal-checkout__form');
 form.addEventListener('submit', async e => {
   e.preventDefault();
@@ -6,22 +9,15 @@ form.addEventListener('submit', async e => {
   const telephone = document.querySelector('#input-telephone').value;
   const email = document.querySelector('#input-email').value;
   const creditCard = document.querySelector('#input-creditcard').value;
-
-  const response = await fetch("http://localhost:3000/users",
+  saveCheckoutinfo(
     {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        name, 
-        identification,
-        telephone,
-        email,
-        creditCard
-      })
-    });
-  const data = await response.json();
+      name, 
+      identification,
+      telephone,
+      email,
+      creditCard
+    }
+  );
 
 });
 
@@ -150,52 +146,3 @@ cvcInput.addEventListener('input', () => {
     cvcCard.textContent = '000';
   }
 });
-
-
-// Confirmar button
-// let confirmButton = document.querySelector('.modal-checkout__button');
-// confirmButton.addEventListener('click', e => {
-//   e.preventDefault();
-//   // name validation
-//   verifyFilled(nameInput, nameErrorDiv);
-//   // id number validation
-//   verifyFilled(IdNumberInput, IdErrorDiv);
-//   // telephone validation
-//   verifyFilled(telephoneInput, telephoneErrorDiv);
-//   // email validation
-//   verifyFilled(emailInput, emailErrorDiv);
-//   // credit card number validation
-//   verifyFilled(numberCreditCardInput, numberCreditCardErrorDiv);
-//   // month validation
-//   if (Number.parseInt(monthInput.value, 10) > 0 && Number.parseInt(monthInput.value, 10) <= 12) {
-//     showError(monthInput, monthErrorDiv, '', false);
-
-//   } else {
-//     showError(monthInput, monthErrorDiv, 'Mes incorrecto');
-//   }
-//   // year validation
-//   verifyFilled(yearInput, yearErrorDiv);
-//   // cvc validation
-//   verifyFilled(cvcInput, cvcErrorDiv);
-// })
-
-// Auxiliar functions
-const showError = (divInput, divError, errorMessage, show = true) => {
-  if (show) {
-    divError.textContent = errorMessage;
-    divInput.style.borderColor = 'hsl(0, 100%, 66%)';
-  } else {
-    divError.textContent = errorMessage;
-    divInput.style.borderColor = '#D3D3D3';
-  } 
-}
-
-const verifyFilled = (divInput, divError) => {
-  if (divInput.value.length > 0) {
-    showError(divInput, divError, '', false);
-    
-  } else {
-    showError(divInput, divError, 'Este campo no puede estar vacio');
-    
-  }
-}

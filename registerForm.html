@@ -34,17 +34,17 @@
       <div class="form-wrapper__image-container"></div>
       <section class="form-wrapper__form-section">
         <form class="form-wrapper__form form">
-          <label class="form__label" for="input-name">Nombre Completo</label>
-          <input class="form-wrapper__input form__input" name="name" id="input-name" type="text" placeholder="e.g. John Smith"/>
+          <label class="form__label" for="input-name-fw">Nombre Completo</label>
+          <input class="form-wrapper__input form__input" name="name" id="input-name-fw" type="text" placeholder="e.g. John Smith"/>
           <div class="form-wrapper__name--error error"></div>
-          <label class="form__label" for="input-id">Número de identificación</label>
-          <input class="form-wrapper__input form__input" name="identification" id="input-id" type="text" placeholder="e.g. 111111111"/>
+          <label class="form__label" for="input-id-fw">Número de identificación</label>
+          <input class="form-wrapper__input form__input" name="identification" id="input-id-fw" type="text" placeholder="e.g. 111111111"/>
           <div class="form-wrapper__identification--error error"></div>
-          <label class="form__label" for="input-telephone">Teléfono</label>
-          <input class="form-wrapper__input form__input" name="telephone" id="input-telephone" type="text" placeholder="e.g. 3332221111"/>
+          <label class="form__label" for="input-telephone-fw">Teléfono</label>
+          <input class="form-wrapper__input form__input" name="telephone" id="input-telephone-fw" type="text" placeholder="e.g. 3332221111"/>
           <div class="form-wrapper__telephone--error error"></div>
-          <label class="form__label" for="input-email">Correo electrónico</label>
-          <input class="form-wrapper__input form__input" name="email" id="input-email" type="text" placeholder="e.g. example@mail.com"/>
+          <label class="form__label" for="input-email-fw">Correo electrónico</label>
+          <input class="form-wrapper__input form__input" name="email" id="input-email-fw" type="text" placeholder="e.g. example@mail.com"/>
           <div class="form-wrapper__email--error error"></div>
           <div class="form__button-container register-button-container">
             <button class="form-wrapper__button form__button register-button-container__create" type="submit">Crear cuenta</button>
@@ -69,7 +69,8 @@
 	</div>
 	<!-- navbar modal end -->
 
-	<script src="./src/resources/basicFunctionality.js" type="module"></script>
+	<script type="module" src="./src/resources/basicFunctionality.js"></script>
+  <script type="module" src="./src/mainScripts/registerForm.js"></script>
 
 </body>
 </html>
