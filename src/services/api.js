@@ -1,4 +1,5 @@
 import axios from 'https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm';
+// import axios from 'axios';
 
 const api = 'http://localhost:3000/';
 
@@ -25,8 +26,8 @@ const saveCheckoutinfo = async (userData) => {
   }
 }
 
-const getInfoAccount = async (id) => {
-  const apiUrl = id ? `${api}userAccounts/${id}` : `${api}userAccounts`;
+const getInfoAccount = async () => {
+  const apiUrl = `${api}userAccounts`;
   try {
     const response = await axios.get(apiUrl);
     return response.data;
@@ -48,5 +49,27 @@ const createAccount = async (userData) => {
   }
 }
 
+const updateAccount = async (userId) => {
+  const apiUrl = `${api}userAccounts/`;
+  try {
+    const response = await axios.put(`${apiUrl}${userId}`);
+    return response;
+  } catch (error) {
+    console.error('Error update product:', error);
+    alert('Hubo un error al actualizar la cuenta. Por favor, inténtalo de nuevo.');
+  }
+}
 
-export { getData, saveCheckoutinfo, getInfoAccount, createAccount };
+const deteleAccount = async (userId) => {
+  const apiUrl = `${api}userAccounts/`;
+  try {
+    await axios.delete(`${apiUrl}${userId}`);
+    return true;
+  } catch (error) {
+    console.error('Error update product:', error);
+    alert('Hubo un error al eliminar la cuenta. Por favor, inténtalo de nuevo.');
+  }
+}
+
+
+export { getData, saveCheckoutinfo, getInfoAccount, createAccount, updateAccount, deteleAccount };
