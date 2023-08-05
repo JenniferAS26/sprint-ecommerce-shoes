@@ -74,7 +74,6 @@ const homeSection = async () => {
 // show modal cart shopping
 const cartIcon = document.querySelector('.header__cart');
 const cartModal = document.querySelector('.cart-modal');
-// let priceModal = document.querySelector('.cart-modal__price');
 const orderContainer = document.querySelector('.cart-modal__checkout-container');
 
 cartIcon.addEventListener('click', () => {
